@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service, Position, Employee
+from .models import Service, Position, Employee, Feature
 
 
 @admin.register(Position)
@@ -15,4 +15,9 @@ class ServiceAdmin(admin.ModelAdmin):
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('name', 'position', 'active', 'modified')
+
+
+@admin.register(Feature)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ('title', 'icon', 'active', 'modified')
 
