@@ -93,6 +93,10 @@ class Plan(Base):
     name = models.CharField('Nome', max_length=100)
     icon = models.CharField('Ícone', max_length=16, choices=ICON_CHOICES)
     price = models.DecimalField('Preço', max_digits=8, decimal_places=2)
+    benefit1 = models.CharField('Benefício-1', max_length=100, default='benefício 1')
+    benefit2 = models.CharField('Benefício-2', max_length=100, default='benefício 2')
+    benefit3 = models.CharField('Benefício-3', max_length=100, default='benefício 3')
+    benefit4 = models.CharField('Benefício-4', max_length=100, default='benefício 4')
 
     class Meta:
         verbose_name = 'Plano'
