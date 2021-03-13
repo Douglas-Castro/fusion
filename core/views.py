@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from .models import Service, Employee, Feature
+from .models import Service, Employee, Feature, Plan
 
 
 class IndexView(TemplateView):
@@ -11,6 +11,7 @@ class IndexView(TemplateView):
         context['employees'] = Employee.objects.order_by('?').all()
         context['featurescolumn1'] = Feature.objects.order_by('?').all()[:3]
         context['featurescolumn2'] = Feature.objects.order_by('?').all()[3:6]
+        context['plans'] = Plan.objects.all()
 
         return context
 
