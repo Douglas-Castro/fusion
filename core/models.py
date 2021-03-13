@@ -12,6 +12,9 @@ ICON_CHOICES = (
     ('lni-rocket', 'Foguete'),
     ('lni-laptop-phone', 'Computador&celular'),
     ('lni-leaf', 'Folha'),
+    ('lni-package', 'Pacote'),
+    ('lni-star', 'Estrela'),
+    ('lni-drop', 'Gota'),
 )
 
 
@@ -84,4 +87,17 @@ class Feature(Base):
 
     def __str__(self):
         return self.title
+
+
+class Plan(Base):
+    name = models.CharField('Nome', max_length=100)
+    icon = models.CharField('Ícone', max_length=16, choices=ICON_CHOICES)
+    price = models.DecimalField('Preço', max_digits=8, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Plano'
+        verbose_name_plural = 'Planos'
+
+    def __str__(self):
+        return self.name
 
