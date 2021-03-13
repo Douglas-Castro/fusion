@@ -14,15 +14,18 @@
               <i class="lni-package"></i>
             </div>
             <div class="pricing-header">
-              <p class="price-value">$ {{ plan.price }}<span> /mês</span></p>
+              <p class="price-value">R$ {{ plan.price }}<span> /mês</span></p>
             </div>
             <div class="title">
               <h3>{{ plan.name }}</h3>
             </div>
-            <!-- <ul class="description">
-              <li>{{ benefit }}</li>
-            </ul> -->
-            <button class="btn btn-common">Buy Now</button>
+            <ul class="description">
+              <li>{{ plan.benefit1 }}</li>
+              <li>{{ plan.benefit2 }}</li>
+              <li>{{ plan.benefit3 }}</li>
+              <li>{{ plan.benefit4 }}</li>
+            </ul>
+            <button class="btn btn-common">Compre Agora</button>
           </div> 
         </div>
         {% endfor %}

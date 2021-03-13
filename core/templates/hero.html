@@ -7,8 +7,8 @@
                     <h2 class="head-title">Com a Fusion, você pode ir mais longe<br></h2>
                     <p>Ajudaremos sua empresa a alcançar o próximo nível mais rápido! </p>
                     <div class="header-button">
-                        <a href="#" class="btn btn-common">Saiba mais</i></a>
-                        <a href="#" class="btn btn-border video-popup">Entre em contato</i></a>
+                        <a href="#services" class="btn btn-common">Saiba mais</i></a>
+                        <a href="#contact" class="btn btn-border video-popup">Entre em contato</i></a>
                     </div>
                 </div>
             </div>
@@ -22,4 +22,15 @@
 </div>
 
 </header>
+
+<div class="container">
+    {% if messages %}
+      {% for m in messages %}
+        <div class="alert alert-{{ m.tags }}">
+          <button type="button" class="close" data-dismiss="alert"></button>
+          <strong>{{ m }}</strong>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
 <!-- Header Area wrapper End -->
