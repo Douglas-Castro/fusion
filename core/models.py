@@ -105,3 +105,18 @@ class Plan(Base):
     def __str__(self):
         return self.name
 
+
+class Client(Base):
+    name = models.CharField('Nome', max_length=100)
+    img = StdImageField('Imagem', upload_to=get_file_path, variations={'thumb':{'width':75, 'height':75, 'crop': True}}, default=False)
+    occupation = models.ForeignKey('core.Position', verbose_name='Profissão', on_delete=models.CASCADE)
+    description = models.TextField('Descrição', max_length=300)
+    rating = models.PositiveSmallIntegerField('Avaliação')
+
+    class Meta:
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
+
+    def __str__(self):
+        return self.name
+
