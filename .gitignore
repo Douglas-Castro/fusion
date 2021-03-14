@@ -1,10 +1,11 @@
 # Virtualenv
-/venv
-__pycache__/
+venv/
+__pycache__
 
 # dotenv
 .env
 
 # Others
-/template
-media/
+*.*~
+*.pyc
+.idea
