@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -36,15 +36,20 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # My apps
+    'core',
+
+    # General use templates & template tags (should appear first)
+    'adminlte3',
+     # Optional: Django admin theme (must be before django.contrib.admin)
+    'adminlte3_theme',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # My apps
-    'core',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +85,7 @@ WSGI_APPLICATION = 'fusion.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -91,11 +96,11 @@ DATABASES = {
         'PORT': os.getenv("DATABASE_PORT"),
     }
 }
-"""
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -140,7 +145,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Test Email console
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 """ Email produção
 EMAIL_HOST='localhost'
